@@ -12,10 +12,10 @@ public class Application {
         MenuController menuController = new MenuController();
 
         Map<String,String> test = new HashMap<>();
-        test.put("name","파엘");
-        test.put("code", "5");
+        test.put("name","테스트 메뉴");
+        test.put("code", "129");
         test.put("status", "Y");
-        test.put("price","2500");
+        test.put("price","3000");
         test.put("category","4");
 
         menuController.selectAllMenu(); //조회

@@ -7,7 +7,7 @@
         <id property="code" column="MENU_CODE"/>
         <result property="name" column="MENU_NAME"/>
         <result property="price" column="MENU_PRICE"/>
-        <result property="category" column="CATEGORY_CODE"/>
+        <result property="categoryCode" column="CATEGORY_CODE"/>
         <result property="orderableStatus" column="ORDERABLE_STATUS"/>
     </resultMap>
 

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">
+    <resultMap id="userResultMap" type="com.ohgiraffers.dto.UserDTO">
+        <id property="userNumber" column="USER_NUMBER"/>
+        <result property="userName" column="USER_NAME"/>
+        <result property="userTier" column="USER_TIER"/>
+    </resultMap>
+    
+    <select id="selectAllUser" resultMap="userResultMap">
+        SELECT
+            USER_NUMBER,
+            USER_NAME,
+            USER_TIER
+          FROM TBL_ALLUSER
+    </select>
+
+    <select id="selectAllUserNumber" parameterType="_int" resultMap="userResultMap">
+        SELECT
+            USER_NUMBER,
+            USER_NAME,
+            USER_TIER
+        FROM TBL_ALLUSER
+        WHERE USER_NUMBER = #{ userNumber }
+    </select>
+    
+    <insert id="insertUser" parameterType="com.ohgiraffers.dto.UserDTO">
+        INSERT INTO TBL_ALLUSER(
+            USER_NAME,
+            USER_TIER
+        )VALUES(
+            #{ userName },
+            #{ userTier }
+        )
+    </insert>
+
+    <update id="modifyUser" parameterType="com.ohgiraffers.dto.UserDTO">
+        UPDATE TBL_ALLUSER
+            SET USER_NAME = #{ userName } ,
+                USER_TIER = #{ userTier }
+        WHERE USER_NUMBER = #{ userNumber }
+    </update>
+    
+    <delete id="deleteUser">
+        DELETE FROM TBL_ALLUSER
+        WHERE USER_NUMBER = #{ userNumber }
+    </delete>
+</mapper>

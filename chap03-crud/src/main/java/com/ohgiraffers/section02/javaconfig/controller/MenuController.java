@@ -1,8 +1,8 @@
-package com.ohgiraffers.section01.xmlconfig.controller;
+package com.ohgiraffers.section02.javaconfig.controller;
 
 import com.ohgiraffers.common.PrintResult;
 import com.ohgiraffers.dto.MenuDTO;
-import com.ohgiraffers.section01.xmlconfig.service.MenuSerivce;
+import com.ohgiraffers.section02.javaconfig.service.MenuSerivce;
 
 import java.util.List;
 import java.util.Map;
