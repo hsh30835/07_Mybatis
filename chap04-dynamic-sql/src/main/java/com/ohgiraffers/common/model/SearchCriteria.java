@@ -1,7 +1,7 @@
 package com.ohgiraffers.common.model;
 
 public class SearchCriteria {
-    private String condition;
+    private String condition; //임의의 저장소 만들기
     private String value;
 
     public SearchCriteria() {

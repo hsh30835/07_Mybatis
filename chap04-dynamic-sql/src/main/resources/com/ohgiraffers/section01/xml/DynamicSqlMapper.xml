@@ -10,6 +10,14 @@
         <result property="categoryCode" column="CATEGORY_CODE"/>
         <result property="orderableStatus" column="ORDERABLE_STATUS"/>
     </resultMap>
+<!--
+    parameterType : 해당 sql 쿼리에 전달되는 파라미터의 자료형을 지정하는 것
+    resultMap : sql실행 결과가 매핑되는 객체의 타입을 지정하는 것
+    파라미터는 함수나 메서드에 전달되는 값을 의미
+    매핑은 한 데이터를 다른 데이터로 대응시키는 것을 의미
+    주로 데이터베이스의 연동이나 객체 간의 관계 등에서 사용한다
+    데이터를 매핑함으로써 한 데이터의 변경이나 검색을 다른 데이터에 반영할 수 있다
+-->
     <select id="selectMenuByPrice" resultMap="menuResult">
         SELECT
             MENU_NAME,
@@ -55,7 +63,7 @@
             A.MENU_CODE,
             A.ORDERABLE_STATUS
           FROM TBL_MENU A
-        <if test="condition == 'category'"> <!--condition에 category를 대입-->
+        <if test="condition == 'category'"> <!--condition에 category를 대입한다-->
             JOIN TBL_CATEGORY B ON (A.CATEGORY_CODE = B.CATEGORY_CODE)
         </if>
          WHERE ORDERABLE_STATUS ='Y'

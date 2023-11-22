@@ -1,21 +1,20 @@
-package com.ohgiraffers.common.model;
+package com.ohgiraffers.section01.DTO;
 
-public class MenuDTO {
-    //DynamicSqlMapper.xml의 컬럼명과 MenuDTO의 변수명 동일하게 맞춰줘야됨
+public class MenuAndCategory {
     private int code;
     private String name;
     private int price;
-    private int categoryCode;
+    private CategoryDTO category;
     private String orderableStatus;
 
-    public MenuDTO() {
+    public MenuAndCategory() {
     }
 
-    public MenuDTO(int code, String name, int price, int categoryCode, String orderableStatus) {
+    public MenuAndCategory(int code, String name, int price, CategoryDTO category, String orderableStatus) {
         this.code = code;
         this.name = name;
         this.price = price;
-        this.categoryCode = categoryCode;
+        this.category = category;
         this.orderableStatus = orderableStatus;
     }
 
@@ -43,12 +42,12 @@ public class MenuDTO {
         this.price = price;
     }
 
-    public int getCategoryCode() {
-        return categoryCode;
+    public CategoryDTO getCategory(CategoryDTO 신규_카테고리) {
+        return category;
     }
 
-    public void setCategoryCode(int categoryCode) {
-        this.categoryCode = categoryCode;
+    public void setCategory(CategoryDTO category) {
+        this.category = category;
     }
 
     public String getOrderableStatus() {
@@ -61,11 +60,11 @@ public class MenuDTO {
 
     @Override
     public String toString() {
-        return "MenuDTO{" +
+        return "MenuAndCategory{" +
                 "code=" + code +
                 ", name='" + name + '\'' +
                 ", price=" + price +
-                ", categoryCode=" + categoryCode +
+                ", category=" + category +
                 ", orderableStatus='" + orderableStatus + '\'' +
                 '}';
     }

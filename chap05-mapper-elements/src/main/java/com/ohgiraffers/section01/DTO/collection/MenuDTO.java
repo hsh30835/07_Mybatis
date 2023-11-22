@@ -1,10 +1,9 @@
-package com.ohgiraffers.common.model;
+package com.ohgiraffers.section01.DTO.collection;
 
 public class MenuDTO {
-    //DynamicSqlMapper.xml의 컬럼명과 MenuDTO의 변수명 동일하게 맞춰줘야됨
     private int code;
     private String name;
-    private int price;
+    public int price;
     private int categoryCode;
     private String orderableStatus;
 
@@ -61,7 +60,7 @@ public class MenuDTO {
 
     @Override
     public String toString() {
-        return "MenuDTO{" +
+        return "\n MenuDTO{" +
                 "code=" + code +
                 ", name='" + name + '\'' +
                 ", price=" + price +

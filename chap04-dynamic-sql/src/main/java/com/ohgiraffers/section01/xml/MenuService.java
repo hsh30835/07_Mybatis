@@ -18,13 +18,13 @@ public class MenuService {
         mapper = session.getMapper(DynamicSqlMapper.class);
 
         Map<String, Integer> map = new HashMap<>();
-        map.put("price",price);
-        List<MenuDTO> menuList = mapper.selectMenuByPrice(map);
+        map.put("price",price); //String에는 변수명을 Integer에는 그 변수명의 값을 넣어주는게 흔함
+        List<MenuDTO> menuList = mapper.selectMenuByPrice(map); //map에 나온 값들을 List로 묶어줌
 
-        if(menuList!=null && menuList.size()>0){
-            for(MenuDTO menu:menuList){
-                System.out.println(menu);
-            }
+        if(menuList!=null && menuList.size()>0){ //menuList가 null이 아닐시 그리고 menuList의 size가 0보다 클시
+            for(MenuDTO menu:menuList){ //menuList를 menu에 대입해서 true일 경우
+                System.out.println(menu); //menu를 출력한다
+            } //false가 될 때 까지 반복
         }else {
             System.out.println("검색 결과가 없습니다.");
         }
@@ -32,8 +32,9 @@ public class MenuService {
     }
 
     public void searchMenu(SearchCriteria searchCriteria) {
-        SqlSession session = getSession();
+        SqlSession session = getSession(); //연결
         mapper = session.getMapper(DynamicSqlMapper.class);
+        //DynamicSqlMapper는 interface(추상)이라서 사용시 class화 시켜야한다
 
 
         List<MenuDTO> menuList = mapper.searchMenu(searchCriteria);
